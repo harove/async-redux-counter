@@ -5,7 +5,7 @@ export const addReqAC = (storeNumber) => {
     return {
         type:ADD_REQ,
         payload:{
-            number:storeNumber+1,
+            loading:true,
         }
     }
 }

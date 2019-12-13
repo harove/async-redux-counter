@@ -20,7 +20,7 @@ const App = () => {
 
   return (
     <div>
-      <label>{store.number}</label>
+      <label>{JSON.stringify(store)}</label>
       <button onClick={handleOnAdd}>Add</button>
       <button onClick={handleOnDec}>Dec</button>
       
