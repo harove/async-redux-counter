@@ -1,4 +1,4 @@
-import {ADD_REQ,ADD_OK,DEC_REQ,DEC_OK} from './const'
+import {ADD_REQ,ADD_RESPONSE_OK,DEC_REQ,DEC_RESPONSE_OK} from './const'
 
 export const addReqAc = (storeNumber) => {
     return {
@@ -11,7 +11,7 @@ export const addReqAc = (storeNumber) => {
 
 export const addReqAsyncOkAc = (storeNumber) => {
     return {
-        type:ADD_OK,
+        type:ADD_RESPONSE_OK,
         payload:{
             number:storeNumber+1,
             loading:false,
@@ -19,8 +19,7 @@ export const addReqAsyncOkAc = (storeNumber) => {
     }
 }
 
-
-export const addReqAsyncAc = (storeNumber) => {
+export const addAsyncAc = (storeNumber) => {
     return (dispatch) => {
         dispatch(addReqAc());
         setTimeout(()=>{
