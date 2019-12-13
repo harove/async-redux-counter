@@ -1,7 +1,7 @@
 import React from "react";
 import store from "./store";
 import { Provider, useSelector,useDispatch } from "react-redux";
-import {addReqAC,decReqAC} from './store/actions'
+import {addReqAsyncAc,decReqAC} from './store/actions'
 import "./App.css";
 
 const App = () => {
@@ -10,7 +10,7 @@ const App = () => {
 
 
   const handleOnAdd = () => {
-    dispatch(addReqAC(store.number));
+    dispatch(addReqAsyncAc(store.number));
   };
 
   const handleOnDec = () => {
