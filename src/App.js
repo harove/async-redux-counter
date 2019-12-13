@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import store from "./store";
+import { Provider, useSelector,useDispatch } from "react-redux";
+import {addReqAC,decReqAC} from './store/actions'
+import "./App.css";
 
-function App() {
+const App = () => {
+  const store = useSelector(store => store);
+  const dispatch = useDispatch();
+
+
+  const handleOnAdd = () => {
+    dispatch(addReqAC(store.number));
+  };
+
+  const handleOnDec = () => {
+    dispatch(decReqAC(store.number));
+  };
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <label>{store.number}</label>
+      <button onClick={handleOnAdd}>Add</button>
+      <button onClick={handleOnDec}>Dec</button>
+      
     </div>
   );
-}
+};
 
 export default App;
