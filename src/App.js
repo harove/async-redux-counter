@@ -1,6 +1,6 @@
 import React from "react";
 import store from "./store";
-import { Provider, useSelector,useDispatch } from "react-redux";
+import {useSelector,useDispatch } from "react-redux";
 import {addAsyncAc,decReqAC} from './store/modules/add/actions'
 import "./App.css";
 
